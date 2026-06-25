@@ -40,5 +40,5 @@ public class FeatureFlag {
     private Instant createdAt;
     @LastModifiedDate
     private Instant updatedAt;
-    
+
 }
