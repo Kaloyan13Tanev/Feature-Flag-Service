@@ -4,10 +4,12 @@ import bg.sofia.interview.bosch.dto.FeatureFlagPatchDTO;
 import bg.sofia.interview.bosch.model.FeatureFlag;
 import bg.sofia.interview.bosch.repository.FeatureFlagRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+@Service
 public class FeatureFlagServiceImpl implements FeatureFlagService {
 
     private final FeatureFlagRepository repo;
