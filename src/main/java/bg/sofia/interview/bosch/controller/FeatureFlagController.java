@@ -4,6 +4,7 @@ import bg.sofia.interview.bosch.dto.FeatureFlagPatchDTO;
 import bg.sofia.interview.bosch.dto.FlagEvaluationResponse;
 import bg.sofia.interview.bosch.model.FeatureFlag;
 import bg.sofia.interview.bosch.service.FeatureFlagService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +29,7 @@ public class FeatureFlagController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createFeatureFlag(@RequestBody FeatureFlag flag) {
+    public ResponseEntity<?> createFeatureFlag(@Valid @RequestBody FeatureFlag flag) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.createFeatureFlag(flag));
     }
 
