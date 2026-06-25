@@ -32,6 +32,7 @@ public class FeatureFlagServiceImplTest {
     private FeatureFlag flag1 = new FeatureFlag();
     private FeatureFlag flag2 = new FeatureFlag();
     private FeatureFlagServiceImpl featureFlagService;
+
     @BeforeEach
     void setUp() {
         featureFlagService = new FeatureFlagServiceImpl(repo);
