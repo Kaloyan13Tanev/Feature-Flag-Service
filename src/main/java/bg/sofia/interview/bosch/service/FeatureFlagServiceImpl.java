@@ -42,7 +42,7 @@ public class FeatureFlagServiceImpl implements FeatureFlagService {
         FeatureFlag flag = getFeatureFlag(id);
         if (update.name() != null) flag.setName(update.name());
         if (update.description() != null) flag.setDescription(update.description());
-        if (update.enabled() != null) flag.setDescription(update.description());
+        if (update.enabled() != null) flag.setEnabled(update.enabled());
 
         return repo.save(flag);
     }
@@ -52,6 +52,8 @@ public class FeatureFlagServiceImpl implements FeatureFlagService {
         if (!repo.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Flag not found");
         }
+
+        repo.deleteById(id);
     }
 
     @Override
